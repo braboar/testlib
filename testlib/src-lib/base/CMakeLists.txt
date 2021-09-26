@@ -1,7 +1,9 @@
-cmake_minimum_required(VERSION 3.14)
+project(base)
 
-project(tests)
+find_package(Qt5Core)
 
-add_subdirectory(base)
-add_subdirectory(test1)
-add_subdirectory(test2)
+
+add_library(base STATIC base.cpp base.h)
+target_link_libraries(base Qt5::Core)
+
+install(TARGETS base)
