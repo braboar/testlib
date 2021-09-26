@@ -1,10 +1,7 @@
-project(base)
+cmake_minimum_required(VERSION 3.14)
 
-find_package(Qt5Core)
+project(tests)
 
-set(CMAKE_AUTOMOC ON)
-
-add_library(base)
-
-target_sources(base PUBLIC base.h PRIVATE base.cpp)
-target_link_libraries(base PRIVATE Qt5::Core)
+add_subdirectory(base)
+add_subdirectory(test1)
+add_subdirectory(test2)
